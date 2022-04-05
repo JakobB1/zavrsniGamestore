@@ -1,0 +1,17 @@
+<?php if(App::config('dev')):?>
+<h1>You are searching for <?=$whatisnotthere?></h1>
+<ul>
+    <li>
+        It may be necessary to create a controller class and then a method in it
+    </li>
+    <li>
+        It may be the wrong name for a class or method controller
+    </li>
+    <li>
+        Maybe the route is wrong in general
+    </li>
+</ul>
+<?php else:?>
+    <h1>What you asked for does not exist</h1>
+    <a href="<?=App::config('url')?>">Homepage</a>
+<?php endif;?>  
