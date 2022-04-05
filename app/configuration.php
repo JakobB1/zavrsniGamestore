@@ -15,8 +15,8 @@ if($_SERVER['SERVER_ADDR']==='127.0.0.1'){
     $base=[
         'server'=>'localhost',
         'base'=>'gamestore',
-        'user'=>'cerera',
-        'password'=>'Jakob8765'
+        'user'=>'edunova',
+        'password'=>'edunova'
     ];
 }
 
