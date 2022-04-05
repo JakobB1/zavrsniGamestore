@@ -3,20 +3,20 @@
 if($_SERVER['SERVER_ADDR']==='127.0.0.1'){
     $url='http://zavrsnigamestore.xyz/';
     $dev=true;
-    $baza=[
+    $base=[
         'server'=>'localhost',
-        'baza'=>'gamestore',
-        'korisnik'=>'edunova',
-        'lozinka'=>'edunova'
+        'base'=>'gamestore',
+        'user'=>'edunova',
+        'password'=>'edunova'
     ];
 }else{
     $url='https://polaznik36.edunova.hr/';
     $dev=false;
-    $baza=[
+    $base=[
         'server'=>'localhost',
-        'baza'=>'gamestore',
-        'korisnik'=>'cerera',
-        'lozinka'=>'Jakob8765'
+        'base'=>'gamestore',
+        'user'=>'cerera',
+        'password'=>'Jakob8765'
     ];
 }
 
@@ -25,5 +25,5 @@ return [
     'url'=>$url,
     'rpp'=>10, // rows per page
     'titleApp'=>'Zavrsni APP',
-    'basse'=>$base
+    'base'=>$base
 ];
