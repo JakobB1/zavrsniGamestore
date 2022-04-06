@@ -1,22 +1,29 @@
 <?php
 
-return [
-    'dev'=>true,
-    'url'=>'http://zavrsnigamestore.xyz/',
-    'titleApp'=>'Gamestore APP',
-    'base'=>[
+if($_SERVER['SERVER_ADDR']==='127.0.0.1'){
+    $url='http://zavrsnigamestore.xyz/';
+    $dev=true;
+    $base=[
         'server'=>'localhost',
         'base'=>'gamestore',
         'user'=>'edunova',
         'password'=>'edunova'
-    ]
-]; 
+    ];
+}else{
+    $url='https://polaznik36.edunova.hr/';
+    $dev=false;
+    $base=[
+        'server'=>'localhost',
+        'base'=>'gamestore',
+        'user'=>'edunova',
+        'password'=>'edunova'
+    ];
+}
 
-
-/*
 return [
-    'dev'=>false,
-    'url'=>'https://predavac01.edunova.hr/',
-    'naslovApp'=>'Edunova APP'
+    'dev'=>$dev,
+    'url'=>$url,
+    'rpp'=>10, // rows per page
+    'titleApp'=>'Edunova APP',
+    'base'=>$base
 ];
-*/
