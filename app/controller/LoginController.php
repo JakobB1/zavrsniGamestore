@@ -36,6 +36,13 @@ class LoginController extends Controller
          $dash->index();
     }
 
+    public function logout()
+    {
+        unset($_SESSION['authorized']);
+        session_destroy();
+        $this->loginView('You have been successfully logged out','');
+    }
+
 
     private function loginView($message,$email)
     {

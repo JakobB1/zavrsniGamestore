@@ -8,6 +8,9 @@
     <ul class="dropdown menu" data-dropdown-menu>
       <li class="menu-text"><?=App::config('titleApp')?></li>
       <li><a href="<?=App::config('url')?>">Front Page</a></li>
+      <?php if(App::authorized()):?>
+        <li><a href="<?=App::config('url')?>dashboard/index">Dashboard</a></li>
+      <?php endif;?>
       <li class="has-submenu">
         <a href="#0">Practice</a>
         <ul class="submenu menu vertical" data-submenu>
@@ -16,13 +19,29 @@
           <li><a href="<?=App::config('url')?>practice/example3">Example 3</a></li>
         </ul>
       </li>
-      <li><a href="#0">Three</a></li>
+      <?php if(App::authorized()):?>
+      <li><a href="#">Programs</a>
+      <ul class="submenu menu vertical" data-submenu>
+          <li><a href="<?=App::config('url')?>publishers/index">Publishers</a></li>
+          <li><a href="<?=App::config('url')?>developers/index">Developers</a></li>
+          <li><a href="<?=App::config('url')?>users/index">Users</a></li>
+          <li><a href="<?=App::config('url')?>games/index">Games</a></li>
+          <li><a href="<?=App::config('url')?>orders/index">Orders</a></li>
+          <li><a href="<?=App::config('url')?>wishlists/index">Wishlists</a></li>
+        </ul>
+      </li>
+      <?php endif;?>
     </ul>
   </div>
   <div class="top-bar-right">
-    <ul class="menu">
-      <li><input type="search" placeholder="Search"></li>
-      <li><button type="button" class="button">Search</button></li>
+  <ul class="menu">
+      <li>
+        <?php if(App::authorized()):?>
+          <a href="<?=App::config('url')?>login/logout">Logout <?php echo $_SESSION['authorized']->name ?></a>
+        <?php else:?>
+          <a href="<?=App::config('url')?>login/index">Login</a>
+        <?php endif;?>
+      </li>
     </ul>
   </div>
 </div>
