@@ -16,7 +16,7 @@ if($_SERVER['SERVER_ADDR']==='127.0.0.1'){
         'server'=>'localhost',
         'base'=>'cerera_edunovapp20',
         'user'=>'cerera_edunova',
-        'password'=>'tRly)B37$WqD'
+        'password'=>'3qg(CFH*93(U'
     ];
 }
 
