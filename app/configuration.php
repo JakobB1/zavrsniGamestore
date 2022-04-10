@@ -14,9 +14,9 @@ if($_SERVER['SERVER_ADDR']==='127.0.0.1'){
     $dev=false;
     $base=[
         'server'=>'localhost',
-        'base'=>'gamestore',
-        'user'=>'edunova',
-        'password'=>'edunova'
+        'base'=>'cerera_edunovapp20',
+        'user'=>'cerera_edunova',
+        'password'=>'tRly)B37$WqD'
     ];
 }
 
@@ -24,6 +24,6 @@ return [
     'dev'=>$dev,
     'url'=>$url,
     'rpp'=>10, // rows per page
-    'titleApp'=>'Edunova APP',
+    'titleApp'=>'Gamestore APP',
     'base'=>$base
 ];
