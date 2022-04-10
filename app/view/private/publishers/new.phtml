@@ -1,0 +1,34 @@
+<form action="<?= App::config('url') ?>publishers/addNew" method="post">
+
+    <fieldset>
+        <legend>Add new Publisher</legend>
+
+
+        <label>
+            Name
+            <input type="text" name="name" value="<?=$publishers->name?>"/>
+        </label>
+
+        <label>
+            Country
+            <input type="text" name="country" value="<?=$publishers->country?>"/>
+        </label>
+
+        <label>
+            Website
+            <input type="text" name="website" value="<?=$publishers->website?>"/>
+        </label>
+
+        <div class="grid-x grid-padding-x">
+            <div class="large-4 cell">
+                <a  class="alert button expanded" 
+                href="<?=App::config('url')?>publishers/index">Cancel</a>
+            </div>
+            <div class="large-8 cell">
+                <input type="submit" class="success button expanded" value="Add new">
+            </div>
+        </div>
+        <?=$message?>
+
+    </fieldset>
+</form>

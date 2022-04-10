@@ -3,7 +3,7 @@ class DB extends PDO
 {
     private static $instance=null;
 
-    public function __construct($base)
+    private function __construct($base)
     {
         $dsn='mysql:host=' . $base['server'] . ';dbname=' . $base['base'] . ';charset=utf8mb4';
         parent::__construct($dsn,$base['user'],$base['password']);

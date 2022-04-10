@@ -1,0 +1,34 @@
+<form action="<?= App::config('url') ?>developers/addNew" method="post">
+
+    <fieldset>
+        <legend>Add new Developer</legend>
+
+
+        <label>
+            Name
+            <input type="text" name="name" value="<?=$developers->name?>"/>
+        </label>
+
+        <label>
+            Country
+            <input type="text" name="country" value="<?=$developers->country?>"/>
+        </label>
+
+        <label>
+            Website
+            <input type="text" name="website" value="<?=$developers->website?>"/>
+        </label>
+
+        <div class="grid-x grid-padding-x">
+            <div class="large-4 cell">
+                <a  class="alert button expanded" 
+                href="<?=App::config('url')?>developers/index">Cancel</a>
+            </div>
+            <div class="large-8 cell">
+                <input type="submit" class="success button expanded" value="Add new">
+            </div>
+        </div>
+        <?=$message?>
+
+    </fieldset>
+</form> 

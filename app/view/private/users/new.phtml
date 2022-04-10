@@ -1,0 +1,60 @@
+<form action="<?= App::config('url') ?>users/addNew" method="post">
+
+    <fieldset>
+        <legend>Add new User</legend>
+
+
+        <label>
+            Name
+            <input type="text" name="name" value="<?=$users->name?>"/>
+        </label>
+
+        <label>
+            Surname
+            <input type="text" name="surname" value="<?=$users->surname?>"/>
+        </label>
+
+        <label>
+            Username
+            <input type="text" name="username" value="<?=$users->username?>"/>
+        </label>
+
+        <label>
+            Password
+            <input type="text" name="password" value="<?=$users->password?>"/>
+        </label>
+
+        <label>
+            Gender
+            <input type="text" name="gender" value="<?=$users->gender?>"/>
+        </label>
+
+        <label>
+            Age
+            <input type="text" name="age" value="<?=$users->age?>"/>
+        </label>
+
+        <label>
+            Email
+            <input type="text" name="email" value="<?=$users->email?>"/>
+        </label>
+
+        <label>
+            Country
+            <input type="text" name="country" value="<?=$users->country?>"/>
+        </label>
+
+
+        <div class="grid-x grid-padding-x">
+            <div class="large-4 cell">
+                <a  class="alert button expanded" 
+                href="<?=App::config('url')?>publishers/index">Cancel</a>
+            </div>
+            <div class="large-8 cell">
+                <input type="submit" class="success button expanded" value="Add new">
+            </div>
+        </div>
+        <?=$message?>
+
+    </fieldset>
+</form>
