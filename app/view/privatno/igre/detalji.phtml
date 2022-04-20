@@ -1,0 +1,77 @@
+<form action="<?=App::config('url')?>igra/akcija" method="post"
+enctype="multipart/form-data">
+
+    <fieldset>
+        <legend>Detalji igara</legend>
+
+
+        <label>
+            Naziv
+            <input type="text" name="naziv" value="<?=$igra->naziv?>" />
+        </label>
+
+        <label>
+            Žanr
+            <input type="text" name="zanr" value="<?=$igra->zanr?>" />
+        </label>
+
+        <label>
+            Cijena
+            <input type="text" name="cijena" value="<?=$igra->cijena?>" />
+        </label>
+
+        <label>
+            Datumizlaska
+            <input type="date" name="datumizlaska" value="<?=$igra->datumizlaska?>" />
+        </label>
+
+        <label>
+                Razvijač
+                <select name="razvijac">
+                    <?php foreach($razvijaci as $razvijac): ?>
+                        <option 
+                        <?php if($razvijac->sifra==$igra->razvijac_id){
+                            echo 'selected="selected"';
+                        } ?>
+                        value="<?=$razvijac->sifra?>"><?=$razvijac->naziv?></option>
+                    <?php endforeach;?>
+                </select>
+        </label>
+
+
+        <label>
+                Izdavač
+                <select name="izdavac">
+                    <?php foreach($izdavaci as $izdavac): ?>
+                        <option 
+                        <?php if($izdavac->sifra==$igra->izdavac_id){
+                            echo 'selected="selected"';
+                        } ?>
+                        value="<?=$izdavac->sifra?>"><?=$izdavac->naziv?></option>
+                    <?php endforeach;?>
+                </select>
+        </label>
+        
+
+
+
+        <label for="slika">Slika</label>
+        <input type="file" name="slika" id="slika">
+
+
+
+        <input type="hidden" name="sifra" value="<?=$igra->sifra?>">
+
+        <div class="grid-x grid-padding-x">
+            <div class="large-4 cell">
+                <a  class="alert button expanded" 
+                href="<?=App::config('url')?>igra/index">Odustani</a>
+            </div>
+            <div class="large-8 cell">
+                <input type="submit" class="success button expanded" value="<?=$akcija?>">
+            </div>
+        </div>
+        <?=$poruka?>
+
+    </fieldset>
+</form>

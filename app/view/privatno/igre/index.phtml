@@ -1,0 +1,42 @@
+<div class="grix-x grid-padding-x">
+<?php include 'dodajNovi.phtml'?>
+        <?php foreach($entiteti as $e): ?>
+            <div class="large-3 medium-4 cell">
+                <div class="callout" style="text-align: center; min-height: 220px;">
+                <h1 style="font-size: 1.5rem;">
+                <img src="<?=App::config('url')?>public/img/nepoznato.png" 
+                alt=" <?=$e->naziv?>">
+                <br />
+                <?=$e->naziv?></h1>
+                <?=$e->zanr?></h1>
+                <hr />
+                <?=$e->izdavac?></h1>
+                <hr />
+                <?=$e->razvijac?></h1>
+                <hr />
+                <?=$e->datumizlaska?></h1>
+                <hr />
+                <?=$e->cijena?></h1>
+                <hr />
+                <a href="<?=App::config('url')?>igra/detalji/<?=$e->sifra?>">
+                        <i title="Promjeni" 
+                            class="fas fa-2x fa-edit"></i>
+                </a>
+
+                <?php if($e->broj_narudzbi==0):?>
+                    <a onclick="return confirm('Sigurno obrisati?');" style="margin-left: 20px;" href="<?=App::config('url')?>igra/brisanje/<?=$e->sifra?>">
+                        <i style="color: red" title="Obriši " 
+                            class="fas fa-2x fa-trash"></i>
+                    </a>  
+                <?php else:?>
+                    <i style="margin-left: 20px;color: gray" 
+                    title="Ne može se obrisati jer ima narudžbe" 
+                            class="fas fa-2x fa-trash"></i>
+                <?php endif;?>
+                    
+                </div>
+                
+            </div>
+    <?php endforeach;?>
+    <?php include 'dodajNovi.phtml'?>
+</div>

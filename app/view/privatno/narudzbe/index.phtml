@@ -1,0 +1,40 @@
+<div class="grid-x">
+    <div class="cell large-6">
+        <h1 style="font-size: 1.5rem;">Narudžbe</h1>
+    </div>
+    <div class="cell large-6" style="text-align: right;">
+        <a href="<?=App::config('url')?>narudzba/novi">
+            <i style="color: green;" title="Dodaj novi" 
+                class="fas fa-2x fa-plus-circle"></i>
+        </a>
+    </div>
+</div>
+<table>
+    <thead>
+        <tr>
+        <th>Korisnik</th>
+        <th>Broj igara</th>
+        <th>Ukupna cijena</th>
+        <th>Način plaćanja</th>
+        <th>Datum kupnje</th>
+        <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($narudzbe as $narudzba): ?>
+            <tr>
+                <td><?=$narudzba->ime?> <?=$narudzba->prezime?></td>
+                <td><?=$narudzba->broj_igara?></td>
+                <td><?=$narudzba->cijena?></td>
+                <td><?=$narudzba->placanje?></td>
+                <td><?=$narudzba->datum?></td>
+                <td>
+                <a href="<?=App::config('url')?>narudzba/promjena/<?=$narudzba->sifra?>">
+                     <i title="Promjeni &quot;<?=$narudzba->naziv?>&quot;" 
+                         class="fas fa-2x fa-edit"></i>
+                </a>
+               
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>

@@ -1,0 +1,36 @@
+<form action="<?=App::config('url')?>izdavac/promjeni" method="post">
+
+    <fieldset>
+        <legend>Promjena postojećeg izdavača</legend>
+
+
+        <label>
+            Naziv
+            <input type="text" name="naziv" value="<?=$izdavac->naziv?>" />
+        </label>
+
+        <label>
+            Država
+            <input type="text" name="drzava" value="<?=$izdavac->drzava?>" />
+        </label>
+
+        <label>
+            Webstranica
+            <input type="text" name="webstranica" value="<?=$izdavac->webstranica?>" />
+        </label>
+
+        <input type="hidden" name="sifra" value="<?=$izdavac->sifra?>">
+
+        <div class="grid-x grid-padding-x">
+            <div class="large-4 cell">
+                <a  class="alert button expanded" 
+                href="<?=App::config('url')?>izdavac/index">Odustani</a>
+            </div>
+            <div class="large-8 cell">
+                <input type="submit" class="success button expanded" value="Promjeni">
+            </div>
+        </div>
+        <?=$poruka?>
+
+    </fieldset>
+</form>
